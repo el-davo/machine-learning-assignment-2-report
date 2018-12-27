@@ -1,1 +1,37 @@
 \section{Research}
+
+\subsection{Dataset}
+
+The dataset is available on the UCI website \url{https://archive.ics.uci.edu/ml/datasets/wine+quality} There are 2 datasets. One for white wine and one for red wine. This paper focuses on the white wine dataset. The dataset holds the following features
+
+\begin{enumerate}
+  \item Fixed acidity 
+  \item Volatile acidity
+  \item Citric acid 
+  \item Residual sugar 
+  \item Chlorides
+  \item Free sulfur dioxide 
+  \item Total sulfur dioxide 
+  \item Density
+  \item PH
+  \item Sulphates
+  \item Alcohol
+  \item Quality (score between 0 and 10)
+\end{enumerate}
+
+We will be trying to predict the quality feature. This ranges from 0 to 10, 0 being the worst and 10 being the best quality wine.
+
+\subsection{Outlier Detection}
+
+Outlier detection is an important part of pre-processing data. Outliers have the ability to skew resulting predictive models by creating noise or abnormalities, therefore it is important that we can effectively find and resolve these outliers.
+
+This paper uses a simple visual method for outlier detection called a boxplot.
+We use a quartile-based boxplot, which uses the lower quartile (Ql, 25th percentile), the median (x̃  or Q2, 50th percentile), the upper quartile (Q3, 75th percentile), and the interquartile range (IQR=Q3-Q1). Then Boxplot outlier rule can be expressed as\cite{6520712}
+
+\begin{equation}
+x_{i} > Q_{3}+1.5IQR\ \bigcup \ x_{i} < Q_{1}-1.5IQR
+\end{equation}
+
+\subsection{Feature Selection}
+
+
