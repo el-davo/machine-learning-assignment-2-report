@@ -1,0 +1,26 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{import}
+\usepackage{float}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{makeidx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\makeindex
+
+\begin{document}
+
+%\clearpage
+%\thispagestyle{empty}
+
+\tableofcontents
+\clearpage
+
+\import{.}{chapters/abstract.tex}
+\import{.}{chapters/introduction.tex}
+\import{.}{chapters/research.tex}
+\import{.}{chapters/methodology.tex}
+\import{.}{chapters/evaluation.tex}
+\import{.}{chapters/conclusions.tex}
+
+\end{document}
