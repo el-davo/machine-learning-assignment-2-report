@@ -1,1 +1,50 @@
 \section{Evaluation}
+
+Classification without any changes to the features was rather dissapointing. The following list shows an initial percentage of accurcy for each model.
+
+\begin{itemize}
+  \item Logistic Regression - 52.53\%
+  \item Decision Tree - 59.49\%
+  \item Random Forest - 63.96\%
+\end{itemize}
+
+Random forest didnt do to badly here. however logistic regression and decision tree were not as good. To create a better score I had to create a new feature called "score". The idea of this new feature was to try and give a summary of the quality of wine rather than just a number. The score feature has a value of either 0, 1 or 2. 0 means that the wine is of poor quality. 1 means that the wine is of medium quality and 2 means that the wine is of high quality. 
+
+This new score feature was added to the model and the quality feature was used to encode the score feature. A summary of how the quality feature translated to the new score feature is listed below
+
+\begin{itemize}
+  \item 0 to 3 is poor quality (0)
+  \item 4 to 7 is average quality (1)
+  \item 8 to 10 is high quality (2)
+\end{itemize}
+
+To see how this was done in the jupyter notebook please see the section called "New Features"
+
+I also dropped the highly corelalted feature called residual sugar, as depicted in figure \ref{fig:heatmap}. 
+
+After tweaking these features the results improved greatly.
+
+\begin{itemize}
+  \item Logistic Regression - 95.86\%
+  \item Decision Tree - 95.11\%
+  \item Random Forest - 96.93\%
+\end{itemize}
+
+Finally after applying parameter optimization using RandomSearchCV the results improved slightly
+
+\begin{itemize}
+  \item Logistic Regression - 96.16\%
+  \item Decision Tree - 96.16\%
+  \item Random Forest - 97.29\%
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{llll}
+\rowcolor[HTML]{9B9B9B} 
+Classifier                                  & Original & After New Features added & Hyper Parameter Optimization \\
+\cellcolor[HTML]{C0C0C0}Logistic Regression & 52.53\%  & 95.86\%                  & 96.16\%                      \\
+\cellcolor[HTML]{C0C0C0}Decision Tree       & 59.49\%  & 95.11\%                  & 96.16\%                      \\
+\cellcolor[HTML]{C0C0C0}Random Forrest      & 63.96\%  & 96.93\%                  & 97.29\%                     
+\end{tabular}
+\end{table}
